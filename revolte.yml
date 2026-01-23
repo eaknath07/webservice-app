@@ -16,7 +16,6 @@ revolte:
             port: 8080
             variables:
               BASE_URL: /api/v1
-              INFO: "#{info}"
           specifications:
             cpu: 2
             memory: 2
