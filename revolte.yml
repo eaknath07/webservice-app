@@ -1,7 +1,7 @@
 revolte:
   version: "1.0"
-  project: test-proj
-  appName: node-service 
+  project: eak-deptest
+  appName: webservice-test 
   env:
     qa:
       branch: test-qa
