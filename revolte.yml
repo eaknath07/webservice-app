@@ -1,7 +1,7 @@
 revolte:
   version: '1.0'
-  project: webservice testing
-  appName: Web service
+  project: web-service
+  appName: webservice-a1
   env:
     staging:
       branch: main
