@@ -21,7 +21,7 @@ revolte:
             memory: 1
             storage: 30
     qa:
-      branch: main
+      branch: test-qa
       services:
         rid_1:
           type: WEB_SERVICE
@@ -33,6 +33,11 @@ revolte:
             loadBalancerMode: shared
             variables:
               BASE_URL: /api/v1
+          insights:
+            disk:
+              - disk_free
+              - disk_total
+              - disk_used
           specifications:
             cpu: 2
             memory: 2
