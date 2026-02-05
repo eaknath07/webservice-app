@@ -21,7 +21,7 @@ revolte:
             memory: 1
             storage: 30
     qa:
-      branch: test-qa
+      branch: main
       services:
         rid_1:
           type: WEB_SERVICE
