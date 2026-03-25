@@ -21,6 +21,8 @@ app.get("/user-vault/health", function (req, res) {
     env: "preview",
   });
 });
+
+throw new Error("FATAL: Failed to connect to mandatory relation 'database'");
 const server = app.listen(8080, function () {
   console.log("app listening on port 8080");
   console.log("entered into something");
