@@ -12,7 +12,7 @@ revolte:
           entryPoint: index.js
           properties:
             health: /health
-            port: 8080
+            port: 8089
             loadBalancerMode: dedicated
             variables:
               BASE_URL: /api/v1
@@ -29,7 +29,7 @@ revolte:
           entryPoint: app.js
           properties:
             health: /user-vault/health
-            port: 8080
+            port: 8089
             loadBalancerMode: shared
             variables:
               BASE_URL: /api/v1
@@ -51,7 +51,7 @@ revolte:
           entryPoint: index.js
           properties:
             health: /health
-            port: 8080
+            port: 8089
             loadBalancerMode: dedicated
             variables:
               BASE_URL: /api/v1
@@ -79,7 +79,7 @@ revolte:
           entryPoint: index.js
           properties:
             health: /health
-            port: 8080
+            port: 8089
             loadBalancerMode: dedicated
             variables:
               BASE_URL: /api/v1
