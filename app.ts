@@ -1,10 +1,10 @@
 import express from "express";
-// import ws from 'web-server';
+import { AppDataSource } from "./data-source.js";
+
 let app = express();
 app.get("/", function (req, res) {
   res.send("Dockerize the node app");
 });
-
 
 app.get("/log", function (req, res) {
   const randomValue = Math.floor(Math.random() * 1000);
@@ -22,8 +22,14 @@ app.get("/user-vault/health", function (req, res) {
   });
 });
 
-throw new Error("FATAL: Failed to connect to mandatory relation 'database'");
-const server = app.listen(8080, function () {
-  console.log("app listening on port 8080");
-  console.log("entered into something");
-});
+AppDataSource.initialize()
+  .then(() => {
+    console.log("Data Source has been initialized!");
+    const server = app.listen(8080, function () {
+      console.log("app listening on port 8080");
+      console.log("entered into something");
+    });
+  })
+  .catch((err) => {
+    console.error("Error during Data Source initialization", err);
+  });
