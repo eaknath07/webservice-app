@@ -1,35 +1,27 @@
 import express from "express";
-import { AppDataSource } from "./data-source.js";
 
-let app = express();
-app.get("/", function (req, res) {
-  res.send("Dockerize the node app");
+const app = express();
+
+app.get("/", (req, res) => {
+  res.send("OK");
 });
 
-app.get("/log", function (req, res) {
+app.get("/log", (req, res) => {
   const randomValue = Math.floor(Math.random() * 1000);
   console.log("🎲 Random value:", randomValue);
+
   res.send("Generated random log");
+
   console.log("✅ Response sent for /log");
 });
 
-app.get("/user-vault/health", function (req, res) {
+app.get("/user-vault/health", (req, res) => {
   res.json({
-    project1: true,
-    app1: true,
     success: true,
     env: "preview",
   });
 });
 
-AppDataSource.initialize()
-  .then(() => {
-    console.log("Data Source has been initialized!");
-    const server = app.listen(8080, function () {
-      console.log("app listening on port 8080");
-      console.log("entered into something");
-    });
-  })
-  .catch((err) => {
-    console.error("Error during Data Source initialization", err);
-  });
+app.listen(8080, () => {
+  console.log("🚀 Server running on port 8080");
+});
