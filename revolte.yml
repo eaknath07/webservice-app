@@ -20,14 +20,6 @@ revolte:
             cpu: 2
             memory: 1
             storage: 30
-        rid_2:
-          type: DATABASE
-          name: db
-          specifications:
-            cpu: 2
-            memory: 1
-            storage: 30
-            engine: postgres
     qa:
       branch: main
       services:
@@ -50,14 +42,6 @@ revolte:
             cpu: 2
             memory: 2
             storage: 30
-        rid_2:
-          type: DATABASE
-          name: db
-          specifications:
-            cpu: 2
-            memory: 1
-            storage: 30
-            engine: postgres
     production:
       branch: main
       services:
@@ -87,14 +71,6 @@ revolte:
               behavior:
                 scaleDown:
                   stabilizationWindow: 300
-        rid_2:
-          type: DATABASE
-          name: db
-          specifications:
-            cpu: 2
-            memory: 1
-            storage: 30
-            engine: postgres
     preview:
       services:
         rid_1:
@@ -111,11 +87,3 @@ revolte:
             cpu: 2
             memory: 1
             storage: 30
-        rid_2:
-          type: DATABASE
-          name: db
-          specifications:
-            cpu: 2
-            memory: 1
-            storage: 30
-            engine: postgres
